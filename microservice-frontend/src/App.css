@@ -1,0 +1,181 @@
+/* src/App.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #f4f1ea; /* Un beige ancien */
+  color: #3e2723; /* Marron foncé pour le texte */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #5d4037;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #8d6e63;
+  padding-bottom: 10px;
+}
+
+/* --- Filtres --- */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-button {
+  background-color: #8d6e63; /* Marron clair */
+  color: #f4f1ea;
+  border: 2px solid #5d4037;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.filter-button:hover {
+  background-color: #6d4c41;
+  transform: translateY(-2px);
+}
+
+.filter-button.active {
+  background-color: #3e2723; /* Marron foncé */
+  color: #fff;
+}
+
+/* --- Grille de Cartes --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.menu-card {
+  background-color: #fff;
+  border: 1px solid #d7ccc8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.menu-card-content {
+  padding: 15px;
+}
+
+.menu-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+  color: #5d4037;
+}
+
+.menu-card-description {
+  font-size: 0.9rem;
+  color: #795548;
+  margin-bottom: 15px;
+}
+
+.menu-card-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3e2723;
+  margin: 0;
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #f4f1ea;
+  border: 2px solid #5d4037;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #5d4037;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #3e2723;
+  padding: 0 20px;
+  margin: 20px 0 10px 0;
+}
+
+.modal-description {
+  font-size: 1rem;
+  color: #5d4037;
+  line-height: 1.6;
+  padding: 0 20px;
+  margin: 0 0 20px 0;
+}
+
+.modal-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3e2723;
+  padding: 0 20px 20px 20px;
+  margin: 0;
+  text-align: right;
+}

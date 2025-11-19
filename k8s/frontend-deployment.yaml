@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: frontend-catalogue-microservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend-catalogue-pod
+  template:
+      metadata:
+       labels:
+         app: frontend-catalogue-pod
+      spec:
+       containers:
+       - name: frontend-catalogue-container
+         image: yassinehriz/image-catalogue-front:build-34
+         ports:
+         - containerPort: 80
+         env:
+          -  name: BACKEND_URI
+             value: http://backend-service:5000/api/products
+

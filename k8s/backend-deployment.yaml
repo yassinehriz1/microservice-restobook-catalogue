@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend-catalogue-microservice
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-catalogue-pod
+
+  template:
+    metadata:
+      labels:
+        app: backend-catalogue-pod
+    spec:
+      containers:
+        - name: container-catalogue-backend
+          image: yassinehriz/microservice-catalogue-backend:v2
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGO_URI
+              value: mongodb://admin:pass@mongo-service:27017/catalogue?replicaSet=rs0&authSource=admin

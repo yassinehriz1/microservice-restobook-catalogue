@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  // Flux des utilisateurs connectés
+  rpc UserConnectedStream (Empty) returns (stream ConnectedUser);
+}
+
+message ConnectedUser {
+  string username = 1;
+}
+
+message Empty {}
