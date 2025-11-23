@@ -74,7 +74,7 @@ useEffect(() => {
   return (
     <div className="app-container">
       <h1 className="app-title">Catalogue du Resto Book</h1>
-      
+      <h1>Test pipeline</h1>
       <div className="filter-container">
         {categories.map(categorie => (
           <button
